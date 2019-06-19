@@ -106,9 +106,13 @@ see source file to check
 #### add new question to model
 
 classifier.addDocument('capital de hungria', 'budapest', 'capital de hungria');
+
 classifier.addDocument('capital de hungria', 'Es budapest', 'capital de hungria');
+
 classifier.addDocument('capital de hungria', 'creo que es budapest', 'capital de hungria');
+
 classifier.addDocument('capital de hungria', 'diria que es budapest', 'capital de hungria');
+
 classifier.addDocument('capital de hungria', 'va a ser budapest', 'capital de hungria');
 
 classifier.train(); // train out model
