@@ -1,0 +1,31 @@
+{
+  "name": "santillana-poc",
+  "version": "1.0.0",
+  "description": "The PoC consists of a system capable of automatically correcting open questions about the 8-year-old children's science level.",
+  "main": "bin/detect.js",
+  "bin": {
+    "santillana-poc": "bin/detect.js"
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "glob": "^7.1.4",
+    "natural": "^0.6.3",
+    "node-nlp": "^3.1.1",
+    "striptags": "^3.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "machine",
+    "learning",
+    "javascript",
+    "map",
+    "reduce"
+  ],
+  "author": " (c)",
+  "license": "MIT"
+}
