@@ -103,7 +103,30 @@ then execute it via the cli `node bin/training.js`
 using natual-nlp library to make questions & answers
 see source file to check
 
-node nlp/nlp.js
+#### add new question to model
+
+classifier.addDocument('capital de hungria', 'budapest', 'capital de hungria');
+classifier.addDocument('capital de hungria', 'Es budapest', 'capital de hungria');
+classifier.addDocument('capital de hungria', 'creo que es budapest', 'capital de hungria');
+classifier.addDocument('capital de hungria', 'diria que es budapest', 'capital de hungria');
+classifier.addDocument('capital de hungria', 'va a ser budapest', 'capital de hungria');
+
+classifier.train(); // train out model
+classifier.save(); // save()
+
+test:
+
+classifier.process('capital de hungria', 'budapest').then(console.log); // intent capital de hungria - ok
+
+classifier.process('capital de hungria', 'pues ni idea').then(console.log); //intent null ok, send message to supervisor
+
+
+```
+ node nlp/nlp.js
+
+```
+
+
 
 ## References 
 Main project - https://github.com/chattylabs/language-detector
