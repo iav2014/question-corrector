@@ -1,4 +1,4 @@
-Santillana-poc
+Question corrector PoC
 
 this project (PoC) has been based on the development made by chattylabs
 
