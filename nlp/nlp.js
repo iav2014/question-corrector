@@ -14,24 +14,25 @@ for(let i=0;i<1000;i++){
 	l.push(i.toString())
 }
 
-const classifier = new NlpManager({ languages: ['es','9+1','5+5'] });
+console.log('training...',new Date());
+const classifier = new NlpManager({ languages: ['capital de hungria','9+1','5+5','IA'] });
 // Gives a name for the fantasy language
-classifier.describeLanguage('es','5+5','9+1');
+classifier.describeLanguage('capital de hungria','5+5','9+1','IA');
 // Train capital de humgria
-classifier.addDocument('es', 'budapest', 'capital de hungria');
-classifier.addDocument('es', 'Es budapest', 'capital de hungria');
-classifier.addDocument('es', 'creo que es budapest', 'capital de hungria');
-classifier.addDocument('es', 'diria que es budapest', 'capital de hungria');
-classifier.addDocument('es', 'va a ser budapest', 'capital de hungria');
-classifier.addDocument('es', 'La inteligencia artificial (IA), es la inteligencia llevada a cabo por máquinas.', 'que es la inteligencia artificial');
+classifier.addDocument('capital de hungria', 'budapest', 'capital de hungria');
+classifier.addDocument('capital de hungria', 'Es budapest', 'capital de hungria');
+classifier.addDocument('capital de hungria', 'creo que es budapest', 'capital de hungria');
+classifier.addDocument('capital de hungria', 'diria que es budapest', 'capital de hungria');
+classifier.addDocument('capital de hungria', 'va a ser budapest', 'capital de hungria');
+classifier.addDocument('IA', 'La inteligencia artificial (IA), es la inteligencia llevada a cabo por máquinas.', 'IA');
 // train inteligencia artificial
-classifier.addDocument('es', 'En ciencias de la computación, una máquina «inteligente» ideal es un agente flexible que percibe su entorno', 'que es la inteligencia artificial');
-classifier.addDocument('es', 'Coloquialmente, el término inteligencia artificial se aplica cuando una máquina imita las funciones\n' +
+classifier.addDocument('IA', 'En ciencias de la computación, una máquina «inteligente» ideal es un agente flexible que percibe su entorno', 'IA');
+classifier.addDocument('IA', 'Coloquialmente, el término inteligencia artificial se aplica cuando una máquina imita las funciones\n' +
 	'cognitivas que los humanos asocian con otras mentes humanas, como por ejemplo: percibir, razonar, aprender y\n' +
-	'resolver problemas', 'que es la inteligencia artificial');
-classifier.addDocument('es', 'la capacidad de un sistema para interpretar\n' +
+	'resolver problemas', 'IA');
+classifier.addDocument('IA', 'la capacidad de un sistema para interpretar\n' +
 	'correctamente datos externos, para aprender de dichos datos y emplear esos conocimientos para lograr tareas y metas\n' +
-	'concretas a través de la adaptación flexible', 'que es la inteligencia artificial');
+	'concretas a través de la adaptación flexible', 'IA');
 
 
 // if several questions have same response:
@@ -55,18 +56,21 @@ classifier.addDocument('9+1', 'diezmil', '9+1');
 
 classifier.train(); // train out model
 classifier.save(); // save()
+console.log('trained !',new Date());
 
 
+// test
+console.log('testing');
+classifier.process('capital de hungria', 'budapest').then(console.log); // ok
+
+classifier.process('capital de hungria', 'pues ni idea').then(console.log); //intent null ok
 
 
-classifier.process('es', 'budapest').then(console.log); // ok
-
-classifier.process('es', 'pues ni idea').then(console.log); //intent null ok
-
-classifier.process('es', 'once').then(console.log); // intent null ok
-classifier.process('es', 'diez').then(console.log); // intent 9+1 ok
-classifier.process('es', 'no lo se').then(console.log); // intent null ok
 
 classifier.process('5+5', 'creo 10').then(console.log); // intent 5+5 ok
 classifier.process('5+5', 'diez').then(console.log); // intent 5+5 ok
 classifier.process('5+5', '7').then(console.log); // intent None ok
+
+classifier.process('IA', 'simula el esquema de razonamiento humano').then(console.log); // intent IA ok
+classifier.process('IA', 'maquinas que piensan').then(console.log); // correct response ,intent IA ok
+classifier.process('IA', 'no he estudiado nada').then(console.log); // intent None incorrect response for IA -  ok
