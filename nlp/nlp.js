@@ -58,7 +58,6 @@ classifier.train(); // train out model
 classifier.save(); // save()
 console.log('trained !',new Date());
 
-
 // test
 console.log('testing');
 classifier.process('capital de hungria', 'budapest').then(console.log); // ok
