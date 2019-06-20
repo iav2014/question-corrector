@@ -9,10 +9,7 @@ cases: same response for different question && free text responses
 
 
 const { NlpManager } = require('node-nlp');
-let l=[];
-for(let i=0;i<1000;i++){
-	l.push(i.toString())
-}
+
 
 console.log('training...',new Date());
 const classifier = new NlpManager({ languages: ['capital de hungria','9+1','5+5','IA'] });
