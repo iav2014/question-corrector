@@ -12,7 +12,7 @@ const { NlpManager } = require('node-nlp');
 
 
 console.log('training...',new Date());
-const classifier = new NlpManager({ languages: ['capital de hungria','9+1','5+5','IA'] });
+const classifier = new NlpManager({ languages: ['capital de hungria','9+1','5+5','IA','e1m'] });
 // Gives a name for the fantasy language
 classifier.describeLanguage('capital de hungria','5+5','9+1','IA');
 // Train capital de humgria
@@ -51,6 +51,13 @@ classifier.addDocument('9+1', 'parece que es diez', '9+1');
 classifier.addDocument('9+1', 'creo que es diez', '9+1');
 classifier.addDocument('9+1', 'diezmil', '9+1');
 
+
+classifier.addDocument('e1m', 'Madrid, Leganés, Getafe y Atlético', 'score4');
+classifier.addDocument('e1m', 'Madrid, Leganés, Getafe', 'score3');
+classifier.addDocument('e1m', 'Madrid, Leganés', 'score2');
+classifier.addDocument('e1m', 'Madrid', 'score1');
+
+
 classifier.train(); // train out model
 classifier.save(); // save()
 console.log('trained !',new Date());
@@ -70,3 +77,7 @@ classifier.process('5+5', '7').then(console.log); // intent None ok
 classifier.process('IA', 'simula el esquema de razonamiento humano').then(console.log); // intent IA ok
 classifier.process('IA', 'maquinas que piensan').then(console.log); // correct response ,intent IA ok
 classifier.process('IA', 'no he estudiado nada').then(console.log); // intent None incorrect response for IA -  ok
+
+classifier.process('e1m', 'barcelona').then(console.log);
+classifier.process('e1m', 'Madrid, Leganés').then(console.log);
+classifier.process('e1m', 'Madrid, Leganés, Getafe y Atlético').then(console.log);

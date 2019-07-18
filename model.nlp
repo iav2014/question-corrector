@@ -4,7 +4,8 @@
       "capital de hungria",
       "9+1",
       "5+5",
-      "IA"
+      "IA",
+      "e1m"
     ]
   },
   "nluManager": {
@@ -13,7 +14,8 @@
       "ca",
       "9+",
       "5+",
-      "ia"
+      "ia",
+      "e1"
     ],
     "intentDomains": {},
     "domainManagers": {
@@ -1902,6 +1904,331 @@
             }
           }
         }
+      },
+      "e1": {
+        "settings": {
+          "language": "e1",
+          "config": {
+            "activation": "leaky-relu",
+            "hiddenLayers": [],
+            "iterations": 20000,
+            "learningRate": 0.8,
+            "errorThresh": 0.00005,
+            "momentum": 0.5,
+            "deltaErrorThresh": 0.000001,
+            "maxDecimals": 9,
+            "leakyReluAlpha": 0.06,
+            "timeout": 120000
+          }
+        },
+        "language": "e1",
+        "nluClassName": "BrainNLU",
+        "useMasterDomain": true,
+        "trainByDomain": true,
+        "keepStopwords": true,
+        "stemDict": {
+          "atlético,getafe,leganés,madrid,y": {
+            "domain": "default",
+            "intent": "score4"
+          },
+          "getafe,leganés,madrid": {
+            "domain": "default",
+            "intent": "score3"
+          },
+          "leganés,madrid": {
+            "domain": "default",
+            "intent": "score2"
+          },
+          "madrid": {
+            "domain": "default",
+            "intent": "score1"
+          }
+        },
+        "intentDict": {
+          "score4": "default",
+          "score3": "default",
+          "score2": "default",
+          "score1": "default"
+        },
+        "useStemDict": true,
+        "domains": {
+          "master_domain": {
+            "settings": {
+              "language": "e1",
+              "config": {
+                "activation": "leaky-relu",
+                "hiddenLayers": [],
+                "iterations": 20000,
+                "learningRate": 0.8,
+                "errorThresh": 0.00005,
+                "momentum": 0.5,
+                "deltaErrorThresh": 0.000001,
+                "maxDecimals": 9,
+                "leakyReluAlpha": 0.06,
+                "timeout": 120000
+              }
+            },
+            "language": "e1",
+            "keepStopwords": true,
+            "docs": [
+              {
+                "intent": "default",
+                "utterance": [
+                  "madrid",
+                  "leganés",
+                  "getafe",
+                  "y",
+                  "atlético"
+                ],
+                "tokens": [
+                  "madrid",
+                  "leganés",
+                  "getafe",
+                  "y",
+                  "atlético"
+                ]
+              },
+              {
+                "intent": "default",
+                "utterance": [
+                  "madrid",
+                  "leganés",
+                  "getafe"
+                ],
+                "tokens": [
+                  "madrid",
+                  "leganés",
+                  "getafe"
+                ]
+              },
+              {
+                "intent": "default",
+                "utterance": [
+                  "madrid",
+                  "leganés"
+                ],
+                "tokens": [
+                  "madrid",
+                  "leganés"
+                ]
+              },
+              {
+                "intent": "default",
+                "utterance": [
+                  "madrid"
+                ],
+                "tokens": [
+                  "madrid"
+                ]
+              }
+            ],
+            "features": {
+              "madrid": 4,
+              "leganés": 3,
+              "getafe": 2,
+              "y": 1,
+              "atlético": 1
+            },
+            "isEditing": false,
+            "className": "BrainNLU",
+            "classifier": {
+              "className": "BrainClassifier",
+              "settings": {
+                "language": "e1",
+                "config": {
+                  "activation": "leaky-relu",
+                  "hiddenLayers": [],
+                  "iterations": 20000,
+                  "learningRate": 0.8,
+                  "errorThresh": 0.00005,
+                  "momentum": 0.5,
+                  "deltaErrorThresh": 0.000001,
+                  "maxDecimals": 9,
+                  "leakyReluAlpha": 0.06,
+                  "timeout": 120000
+                }
+              },
+              "labels": [],
+              "network": {
+                "layers": [],
+                "trainOpts": {
+                  "iterations": 20000,
+                  "errorThresh": 0.00005,
+                  "deltaErrorThresh": 0.000001,
+                  "learningRate": 0.8,
+                  "momentum": 0.5,
+                  "leakyReluAlpha": 0.06,
+                  "maxDecimals": 9
+                }
+              }
+            }
+          },
+          "default": {
+            "settings": {
+              "language": "e1",
+              "config": {
+                "activation": "leaky-relu",
+                "hiddenLayers": [],
+                "iterations": 20000,
+                "learningRate": 0.8,
+                "errorThresh": 0.00005,
+                "momentum": 0.5,
+                "deltaErrorThresh": 0.000001,
+                "maxDecimals": 9,
+                "leakyReluAlpha": 0.06,
+                "timeout": 120000
+              }
+            },
+            "language": "e1",
+            "keepStopwords": true,
+            "docs": [
+              {
+                "intent": "score4",
+                "utterance": [
+                  "madrid",
+                  "leganés",
+                  "getafe",
+                  "y",
+                  "atlético"
+                ],
+                "tokens": [
+                  "madrid",
+                  "leganés",
+                  "getafe",
+                  "y",
+                  "atlético"
+                ]
+              },
+              {
+                "intent": "score3",
+                "utterance": [
+                  "madrid",
+                  "leganés",
+                  "getafe"
+                ],
+                "tokens": [
+                  "madrid",
+                  "leganés",
+                  "getafe"
+                ]
+              },
+              {
+                "intent": "score2",
+                "utterance": [
+                  "madrid",
+                  "leganés"
+                ],
+                "tokens": [
+                  "madrid",
+                  "leganés"
+                ]
+              },
+              {
+                "intent": "score1",
+                "utterance": [
+                  "madrid"
+                ],
+                "tokens": [
+                  "madrid"
+                ]
+              }
+            ],
+            "features": {
+              "madrid": 4,
+              "leganés": 3,
+              "getafe": 2,
+              "y": 1,
+              "atlético": 1
+            },
+            "isEditing": false,
+            "className": "BrainNLU",
+            "classifier": {
+              "className": "BrainClassifier",
+              "settings": {
+                "language": "e1",
+                "config": {
+                  "activation": "leaky-relu",
+                  "hiddenLayers": [],
+                  "iterations": 20000,
+                  "learningRate": 0.8,
+                  "errorThresh": 0.00005,
+                  "momentum": 0.5,
+                  "deltaErrorThresh": 0.000001,
+                  "maxDecimals": 9,
+                  "leakyReluAlpha": 0.06,
+                  "timeout": 120000
+                }
+              },
+              "labels": [],
+              "network": {
+                "sizes": [
+                  5,
+                  4
+                ],
+                "layers": [
+                  {
+                    "madrid": {},
+                    "leganés": {},
+                    "getafe": {},
+                    "y": {},
+                    "atlético": {}
+                  },
+                  {
+                    "score4": {
+                      "bias": -0.416494638,
+                      "weights": {
+                        "madrid": -0.832987189,
+                        "leganés": -0.230165839,
+                        "getafe": 1.479890823,
+                        "y": 8.33310318,
+                        "atlético": 8.33310318
+                      }
+                    },
+                    "score3": {
+                      "bias": -0.476350337,
+                      "weights": {
+                        "madrid": -0.951454043,
+                        "leganés": 1.512251019,
+                        "getafe": 16.482383728,
+                        "y": -8.269836426,
+                        "atlético": -8.269836426
+                      }
+                    },
+                    "score2": {
+                      "bias": 0.064918287,
+                      "weights": {
+                        "madrid": 0.13452661,
+                        "leganés": 16.175065994,
+                        "getafe": -16.225788116,
+                        "y": -1.889092326,
+                        "atlético": -1.889092326
+                      }
+                    },
+                    "score1": {
+                      "bias": 5.521289825,
+                      "weights": {
+                        "madrid": 11.038796425,
+                        "leganés": -16.480377197,
+                        "getafe": -3.136286736,
+                        "y": -0.800853789,
+                        "atlético": -0.800853789
+                      }
+                    }
+                  }
+                ],
+                "trainOpts": {
+                  "iterations": 20000,
+                  "errorThresh": 0.00005,
+                  "deltaErrorThresh": 0.000001,
+                  "learningRate": 0.8,
+                  "momentum": 0.5,
+                  "leakyReluAlpha": 0.06,
+                  "maxDecimals": 9
+                }
+              }
+            }
+          }
+        }
       }
     },
     "extraSentences": [
@@ -1996,6 +2323,22 @@
       [
         "9+",
         "diezmil"
+      ],
+      [
+        "e1",
+        "Madrid, Leganés, Getafe y Atlético"
+      ],
+      [
+        "e1",
+        "Madrid, Leganés, Getafe"
+      ],
+      [
+        "e1",
+        "Madrid, Leganés"
+      ],
+      [
+        "e1",
+        "Madrid"
       ]
     ]
   },

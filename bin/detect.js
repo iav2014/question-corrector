@@ -9,3 +9,10 @@ console.log(detector('en el mesencefalo se hubica','coliculos'));
 console.log(detector('que es la IA (1)','Es la inteligencia que simula el conocimiento humano'))
 console.log(detector('que es la IA (2)','maquina que imita el proceso cognitivo humano'));
 console.log(detector('que es la IA (3)','no tengo ni idea de que es eso'));
+
+console.log(detector('cuales son los equipos de madrid en primera?','madrid'));
+console.log(detector('cuales son los equipos de madrid en primera?','atletico, madrid'));
+console.log(detector('cuales son los equipos de madrid en primera?','atletico, madrid, getafe'));
+console.log(detector('cuales son los equipos de madrid en primera?','Madrid, Leganés, Getafe y Atlético'));
+console.log(detector('cuales son los equipos de madrid en primera?','barcelona'));
+
